@@ -1,0 +1,10 @@
+{
+  "signupButton": "Registarse",
+  "firstNameLabel": "Nombre",
+  "lastNameLabel": "Apellido",
+  "emailLabel": "Email",
+  "repeatPasswordLabel": "Repetir contraseña",
+  "birthDateLabel": "Fecha de nacimiento",
+  "usernameLabel": "Username",
+  "selectDate": "Seleccionar fecha"
+}

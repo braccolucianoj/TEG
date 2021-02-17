@@ -1,0 +1,10 @@
+{
+  "signupButton": "Sign up",
+  "firstNameLabel": "First name",
+  "lastNameLabel": "Last name",
+  "emailLabel": "Email",
+  "repeatPasswordLabel": "Repeat password",
+  "birthDateLabel": "Birth date",
+  "usernameLabel": "Username",
+  "selectDate": "Select date"
+}

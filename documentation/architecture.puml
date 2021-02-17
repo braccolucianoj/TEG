@@ -1,0 +1,15 @@
+@startuml Design
+skinparam linetype ortho
+
+node Server
+node client1
+node client2
+node client3
+node client4
+
+Server -- client1
+Server -- client2
+Server -- client3
+Server -- client4
+
+@enduml

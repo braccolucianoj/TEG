@@ -1,0 +1,11 @@
+@import '../../../mixins/css/general.styles.scss';
+
+.profileCardContainer {
+  @extend .fullHeight, .fullWidth, .nonSelectable;
+  padding: 0 1rem;
+  @extend .hoverable;
+}
+
+.profileCardTitle {
+  display: inline;
+}

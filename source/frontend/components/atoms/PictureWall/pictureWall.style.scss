@@ -1,0 +1,23 @@
+@import '../../../mixins/css/general.styles.scss';
+
+@mixin fullScreen() {
+  @extend .fullWidth;
+  @extend .fullHeight;
+}
+
+.pictureWall {
+  display: block;
+  @include fullScreen;
+  padding: 1rem;
+  & > .ant-upload-list-picture-card {
+    @include fullScreen;
+  }
+  & > .ant-upload-list-picture-card > .ant-upload-select-picture-card {
+    @include fullScreen;
+  }
+
+  & > .ant-upload-list-picture-card > .ant-upload-list-picture-card-container {
+    @include fullScreen;
+    object-fit: cover;
+  }
+}
