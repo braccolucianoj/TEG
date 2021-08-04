@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  migration_runner:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://database:5432/teg_database -user=app_user -password=app_user_password -connectRetries=60 migrate
+    volumes:
+      - ./flywayMigrations:/flyway/sql

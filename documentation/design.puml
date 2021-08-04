@@ -1,0 +1,121 @@
+@startuml Design
+skinparam linetype ortho
+
+enum GameStatus
+enum GameRoundStatus
+enum GameEventType {
+    Attack
+    Defense
+
+    GetCountryCard
+    UseCountryCard
+
+    SwapCardsArmy
+
+    GainContinet
+    LoseContinent
+
+    ArmyAdditionEnd
+}
+
+enum GameEventType
+
+enum CountryType {
+    Attack
+    Defense
+    GainContinet
+    LoseContinent
+    Swap
+}
+
+enum RoundSituation {
+    Nieve
+    VientoAFavor
+    FronterasCerradas
+    FronterasAbiertas
+    Crisis
+    RefuerzosExtra
+    Decanso
+}
+
+class AppUser {
+    id: string
+    firstName: string
+    lastName: string
+    username: string
+    email: string
+    birthDate: date
+    password: string
+    passwordSalt: string
+    imageURL: string
+}
+
+class Game {
+    id: string
+    createdAt: timestamp
+    status: GameStatus
+    public: boolean;
+}
+
+class Goal {
+    id: string
+    name: string
+    functionCheckerName: string
+    description: string
+}
+
+class GameRound {
+    id: string
+    round: number
+    createdAt: timestamp
+    status: GameRoundStatus
+    situation: RoundSituation
+    usersOrder: string[]
+    user_turn: sitnrg
+}
+
+class GameEvent {
+    id: string
+    player: User
+    type: GameEventType
+    info: JSON
+    createdAt: Date
+}
+
+class GameCountry {
+    id: string
+    name: string
+    alpha2: string
+    continent: string
+    countryType: string
+}
+
+class PlayerGameInfo {
+    id: string
+    color: string
+    ContinentCardsUsed: [string]
+}
+
+class CountryGameOccupation {
+    player: User
+    occupation: number[]
+}
+
+<> diamond
+
+' Relationships
+Game "1" -left- "*" GameRound
+Game "*" -right- "*" GameCountry
+
+Game "1" -down- "*" diamond
+AppUser "1" -left- "*" diamond
+PlayerGameInfo "1" -right- "1" diamond
+Goal "1" -up- "*" diamond
+' (AppUser,Game) "1" -left- "1" PlayerGameInfo
+
+Game "1" -up- "*" GameEvent :history
+' (Game, AppUser) "*" .. "*" PlayerGameInfo
+
+CountryGameOccupation "*" .. "*" (GameCountry, Game)
+
+@enduml

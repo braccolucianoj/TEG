@@ -1,0 +1,14 @@
+{
+  "enterText": "Enter text here...",
+  "requiredField": "Required field",
+  "invalidEmail": "The email is not valid",
+  "upload": "Upload",
+  "passwordLabel": "Password",
+  "failUploadImage": "{{field, capitalize}} image upload failed",
+  "imageSizeMax": "Image must smaller than 1MB!",
+  "minLengthString": "{{field, capitalize}} should have more than {{number}} characters",
+  "shouldOnlyHave": "{{field, capitalize}} should only have {{values}}",
+  "shouldStartWith": "Should start with {{expression}}",
+  "passwordsMismatch": "Passwords do not match",
+  "mustContain": "{{field, capitalize}} must contain at least 3 of the following characters: lowercase, uppercase, numbers and symbols such as !@#$%^&*)(+=._-"
+}

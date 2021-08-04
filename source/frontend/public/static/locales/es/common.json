@@ -1,0 +1,14 @@
+{
+  "enterText": "Ingrese el texto aquí...",
+  "requiredField": "Campo requerido",
+  "invalidEmail": "El email es inválido",
+  "upload": "Cargar",
+  "passwordLabel": "Contraseña",
+  "failUploadImage": "La carga de {{field}} ha fallado",
+  "imageSizeMax": "Las imágenes deben ser menores a 1MB!",
+  "minLengthString": "{{field, capitalize}} debe tener más de {{number}} caracteres",
+  "shouldOnlyHave": "{{field, capitalize}} sólo puede tener {{values}}",
+  "shouldStartWith": "Debería empezar con {{expression}}",
+  "passwordsMismatch": "Las contraseñas no coinciden",
+  "mustContain": "{{field, capitalize}} debe contener al menos 3 de los siguientes caracteres: minúscula, mayúscula, número o símbolos como !@#$%^&*)(+=._-"
+}

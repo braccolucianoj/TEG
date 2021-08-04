@@ -1,0 +1,15 @@
+export default {
+  enterText: 'enterText',
+  requiredField: 'requiredField',
+  invalidEmail: 'invalidEmail',
+  upload: 'upload',
+  uploadFail_P: 'failUploadImage',
+  uploadMaxSize: 'imageSizeMax',
+  minLengthString: 'minLengthString',
+  shouldOnlyHave: 'shouldOnlyHave',
+  shouldStartWith: 'shouldStartWith',
+  passwordsMismatch: 'passwordsMismatch',
+  mustContain: 'mustContain',
+  defaultProfileName: 'defaultProfileName',
+  passwordLabel: 'passwordLabel',
+};

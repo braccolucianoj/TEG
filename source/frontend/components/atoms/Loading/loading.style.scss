@@ -1,0 +1,23 @@
+@import '../../../mixins/css/general.styles.scss';
+
+.LoadingItem {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 10em;
+
+  img {
+    margin-bottom: 1em;
+    width: 130px;
+  }
+  h3 {
+    @include primary-text($h3, $primary-color, 400);
+  }
+  p {
+    @include primary-text($body, $grey, 400);
+  }
+  .ant-spin-spinning {
+    margin-top: 1em;
+    color: $grey;
+  }
+}

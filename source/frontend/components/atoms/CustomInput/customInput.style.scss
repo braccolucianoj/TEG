@@ -1,0 +1,79 @@
+@import '../../../mixins/css/general.styles.scss';
+
+.customInputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-flow: row wrap;
+  margin: 0.3rem 0.25rem 0;
+
+  align-items: center;
+  label {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+// Label
+@mixin labelType($colour) {
+  color: $colour;
+}
+
+.successLabel {
+  @include labelType($successColor);
+}
+
+.errorLabel {
+  @include labelType($errorColor);
+}
+
+// Input
+@mixin inputFocus {
+  @extend .withoutShadow;
+  outline: 0px;
+  border-width: 0px !important;
+  border-color: transparent !important;
+  border-bottom: 1px solid $coolInputColor !important;
+  width: 100%;
+}
+
+@mixin inputType($colour) {
+  outline-color: $colour;
+  border-color: $colour;
+}
+
+.normalInput {
+  border: 0px;
+  outline: 0px;
+  border-bottom: 1px solid black;
+  width: 25%;
+  border-radius: 0;
+  margin-left: auto;
+  margin-right: auto;
+  &:focus {
+    @include inputFocus();
+  }
+  &:hover {
+    border-bottom: 1px solid $coolInputColor !important;
+  }
+  &.ant-input-affix-wrapper-focused {
+    @include inputFocus();
+    -webkit-box-shadow: 0 0 0 0px transparent;
+    box-shadow: 0 0 0 0px transparent;
+  }
+  &.ant-picker-focused {
+    @include inputFocus();
+    -webkit-box-shadow: 0 0 0 0px transparent;
+    box-shadow: 0 0 0 0px transparent;
+  }
+}
+
+.successInput {
+  @include inputType($successColor);
+}
+
+.errorInput {
+  @include inputType($errorColor);
+}

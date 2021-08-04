@@ -1,0 +1,145 @@
+// Colors
+$background: #f6f8ff;
+$surface: #fff;
+
+$primaryColor: #0097e6;
+$secondaryColor: #283238;
+$dangerColor: #e74c3c;
+$selectionColor: #1890ff;
+
+$black: #000;
+$white: #fff;
+$grey: #97a3b4;
+$darkGray: #788290;
+$mediumGray: #c5d0de;
+$lightGrey: #f3f6f8;
+$errorColor: rgb(228, 101, 101);
+$successColor: rgb(43, 161, 43);
+$coolInputColor: #c30bdc;
+
+// Typographic Scale
+$title: 28px;
+$subtitle: 18px;
+$header: 20px;
+$h1: 18px;
+$h2: 16px;
+$h3: 14px;
+$button: 12px;
+$body: 12px;
+$tabs: 10px;
+$label: 12px;
+
+// Shadow
+$shadow: 0 1px 6px rgba(147, 141, 158, 0.16), 0 2px 6px rgba(52, 53, 62, 0.16);
+$shadow-header: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+$shadow-blue: 0 1px 6px rgba(1, 108, 165, 0.16), 0 2px 6px rgba(1, 108, 165, 0.16);
+
+// Media queries
+// from Antd
+$breakpoints: (
+  'xs': 575px,
+  'sm': 767,
+  'md': 991,
+  'lg': 1199,
+  'xl': 1599,
+) !default;
+
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'retina2x': (
+    '(-webkit-min-device-pixel-ratio: 2)',
+    '(min-resolution: 192dpi)',
+  ),
+  'retina3x': (
+    '(-webkit-min-device-pixel-ratio: 3)',
+    '(min-resolution: 350dpi)',
+  ),
+) !default;
+
+$unit-intervals: (
+  'px': 1,
+  'em': 0.01,
+  'rem': 0.1,
+) !default;
+// usage example: @include media(">tablet", "<=desktop", "retina2x") {}
+
+@mixin primary-text($font-size, $font-color, $font-weight) {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  @if $font-color {
+    color: $font-color;
+  }
+}
+
+@mixin secondary-text($font-size, $font-color, $font-weight) {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  @if $font-color {
+    color: $font-color;
+  }
+}
+
+// Container
+
+@mixin container() {
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(147, 141, 158, 0.16), 0 2px 6px rgba(52, 53, 62, 0.28);
+  border-radius: 6px;
+  padding: 1em;
+}
+
+@mixin rowHeight($height) {
+  height: $height !important;
+  max-height: $height !important;
+  min-height: $height !important;
+}
+
+.row-40 {
+  @include rowHeight(40%);
+}
+
+.row-60 {
+  @include rowHeight(60%);
+}
+
+.fullWidth {
+  width: 100% !important;
+}
+
+.fullHeight {
+  height: 100% !important;
+}
+
+.pageContainer {
+  height: 100% !important;
+  max-height: 100% !important;
+  box-sizing: border-box;
+}
+
+.nonSelectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hoverable {
+  -webkit-transition: border-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: border-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  transition: box-shadow 0.3s, border-color 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.withoutShadow {
+  -webkit-box-shadow: 0px 0px 0px transparent !important;
+  -moz-box-shadow: 0px 0px 0px transparent !important;
+  box-shadow: 0px 0px 0px transparent !important;
+}
