@@ -40,7 +40,7 @@ CREATE TABLE goal (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   function_checker_name VARCHAR(255) NOT NULL,
-  description text
+  description TEXT
 );
 
 CREATE TABLE player_game (
@@ -75,9 +75,11 @@ CREATE TABLE game_country (
   alpha2 VARCHAR(255) NOT NULL,
   country_type VARCHAR(255) NOT NULL,
   continent_id INTEGER NOT NULL,
-  -- Constraints
-  FOREIGN KEY (continent_id) REFERENCES continent (id) ON DELETE NO ACTION,
 
+  --References
+  FOREIGN KEY (continent_id) REFERENCES continent (id) ON DELETE NO ACTION,
+  
+  -- Constraints
   UNIQUE(name),
   UNIQUE(alpha2)
 );
@@ -112,4 +114,13 @@ CREATE TABLE game_round (
   FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE NO ACTION,
   -- Constraints
   UNIQUE(round_number, game_id)
+);
+
+CREATE TABLE tracking (
+  id SERIAL PRIMARY KEY,
+  screen VARCHAR(255), 
+  amount_clicks INTEGER NOT NULL,
+
+  --Constraints
+  UNIQUE(screen)
 );
