@@ -113,3 +113,12 @@ CREATE TABLE game_round (
   -- Constraints
   UNIQUE(round_number, game_id)
 );
+
+CREATE TABLE tracking (
+id SERIAL PRIMARY KEY,
+screen VARCHAR(255),
+amount_clicks INTEGER NOT NULL,
+
+--Constraints
+UNIQUE(screen)
+);
