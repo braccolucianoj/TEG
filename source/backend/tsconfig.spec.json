@@ -12,8 +12,8 @@
     "sourceMap": true,
     "outDir": "./dist",
     "typeRoots": ["/node_modules/@types"],
-    "types": ["@types/jest"]
+    "types": ["jest", "node"]
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "exclude": ["node_modules"]
 }

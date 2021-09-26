@@ -1,5 +1,6 @@
+require('dotenv').config({ path: `${__dirname}/env/${process.env.NODE_ENV}.env` });
+
 import * as config from 'config';
-import ajvErrors from 'ajv-errors';
 import Fastify, { FastifyInstance, FastifyLoggerOptions } from 'fastify';
 
 import { initModels } from './models';
@@ -18,11 +19,13 @@ import {
   JWTPlugin,
 } from './plugins';
 
+const {
+  server: { port, hostname },
+  logger: { logsPath, ...restLoggerProps },
+  production,
+} = config as IConfig;
+
 const main = () => {
-  const {
-    server: { port, hostname },
-    production,
-  } = config as IConfig;
   const app: FastifyInstance = Fastify({
     ajv: {
       customOptions: {
@@ -37,10 +40,10 @@ const main = () => {
     },
     logger: {
       level: 'info',
-      file: production ? 'logs/combined.log' : undefined,
+      file: production ? logsPath : undefined,
       redact: ['req.headers.cookies'],
       prettyPrint: true,
-      ...(config as IConfig).logger,
+      ...restLoggerProps,
     } as FastifyLoggerOptions,
     bodyLimit: 1024 * 1024, // 1Mb
   });

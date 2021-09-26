@@ -23,8 +23,8 @@ fi
 
  
 echo "Creating keys folder"
-mkdir -p config/secrets/keys/authentication
-cd config/secrets/keys/authentication
+mkdir -p secrets/authentication
+cd secrets/authentication
 
 echo "Generating key request for $domain"
 
