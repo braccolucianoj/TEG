@@ -17,24 +17,9 @@ BTW, The login is dummy
 
 ## Backend
 
-Add a file on `source/backend/config/secrets/secrets.default.js`. The database secrets are random data so we can share it, for now.
+The database secrets are random data so we can't share it, for now. The way to overcome this is to add the env/develop.env file which is intended to contain all the environment variables.
 
-```javascript
-module.exports = {
-  database: {
-    username: 'app_user',
-    password: 'app_user_password',
-    database: 'teg_database',
-  },
-  jwt: {
-    privateKeyPath: '',
-    publicKeyPath: '',
-    passprhase: '',
-  },
-};
-```
-
-and run the following `bash scripts/generateJWTCertificate.sh` from the `source/backend` folder. This will create a pair of public private keys that creates and validates JWTs.
+For certificates run the following `bash scripts/generateJWTCertificate.sh` from the `source/backend` folder. This will create a pair of public private keys that creates and validates JWTs.
 
 ## Board
 

@@ -42,6 +42,21 @@ export interface ICORSConfig {
   methods: string[];
 }
 
+export interface ISendgridConfig {
+  apiKey: string;
+  senderEmail: string;
+  verificationEmailTemplateID: string;
+  sandboxMode: boolean;
+}
+
+export interface IRegistrationConfig {
+  needsVerification: boolean;
+}
+
+export interface ILoggerConfig extends FastifyLoggerOptions {
+  logsPath: string;
+}
+
 export interface IConfig {
   production: boolean;
   database: IDatabaseConfig;
@@ -49,5 +64,7 @@ export interface IConfig {
   jwt: IJWTConfig;
   server: IServerConfig;
   cors: ICORSConfig;
-  logger: FastifyLoggerOptions | {};
+  logger: ILoggerConfig;
+  sendgrid: ISendgridConfig;
+  registration: IRegistrationConfig;
 }

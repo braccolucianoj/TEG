@@ -20,4 +20,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/config/secrets
+/secrets
+/env
+
+# Logs path
+/logs
+
+# Logs path
+/dist
